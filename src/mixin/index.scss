@@ -1,0 +1,47 @@
+@mixin transtion {
+  transition: all ease-in-out 300ms;
+}
+
+@mixin font-init($fs: 12px, $color: #fff, $fw: 400, $lh: 1.15) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+  line-height: $lh;
+}
+
+/* flex */
+@mixin flex-row($jc: space-around, $ag: center) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: $jc;
+  align-items: $ag;
+}
+@mixin flex-column($jc: space-around, $ag: center) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: $jc;
+  align-items: $ag;
+}
+
+/* .5px border */
+.half-pixel-line-common {
+  position: absolute;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  right: 0;
+  border-bottom: 1px solid #ebedf0;
+  transform: scaleY(0.5);
+}
+@mixin half-pixel-line-top($left: 0) {
+  @extend .half-pixel-line-common;
+  left: $left;
+  top: 0;
+}
+@mixin half-pixel-line-bottom($left: 0) {
+  @extend .half-pixel-line-common;
+  left: $left;
+  bottom: 0;
+}
